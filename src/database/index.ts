@@ -1,7 +1,7 @@
-import neo4j from 'neo4j-driver';
+import neo4j, {AuthToken} from 'neo4j-driver';
 import config from './neo4j/config';
+import Query from "./query";
 
 const driver: any = neo4j.driver(config.neo4j.url);
-const session = driver.session();
-
-export default session;
+export const query = new Query();
+export const session = driver.session();
