@@ -9,8 +9,6 @@ export class AppController {
   @Get()
   async getHello(): Promise<string> {
     const result = await session.run(query.getAllSkillData());
-    console.info(result.records);
-    // console.info(node.properties.name);
     return this.appService.getHello();
   }
 }
