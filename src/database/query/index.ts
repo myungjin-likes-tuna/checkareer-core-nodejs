@@ -5,7 +5,11 @@ export default class Query {
         return `MATCH (n) RETURN n`;
     }
 
-    createAdminData(){
-        return 'b';
+    getSkillByName() {
+        return 'MATCH (n:'
+    }
+
+    createAdminData(variable: string ,type: string, value: string){
+        return `CREATE (${variable}: ${type} {name: \'${value}\'})`;
     }
 }
