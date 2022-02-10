@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post} from '@nestjs/common';
+import {Body, Controller, Get, Param, Post} from '@nestjs/common';
 import {SkillService} from "./skill.service";
 import { CreateSkillDto } from './DTO/createSkillDto'
 
@@ -16,9 +16,9 @@ export class SkillController {
         return await this.skillService.searchSkills();
     }
 
-    @Get('/:skillId')
-    async skill(): Promise<string> {
-        return await this.skillService.searchSkillById();
+    @Get('/limit/:limit')
+    async skillLimit(@Param('limit') limit: number): Promise<string> {
+        return await this.skillService.searchSkillLimit(limit)
     }
 
     @Post('/create/admin')

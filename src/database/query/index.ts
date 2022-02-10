@@ -5,6 +5,10 @@ export default class Query {
         return `MATCH (n) RETURN n`;
     }
 
+    getLimitSkill(limit: number) {
+        return `MATCH (n) RETURN n LIMIT ${limit}`
+    }
+
     getSkillByName() {
         return 'MATCH (n:'
     }

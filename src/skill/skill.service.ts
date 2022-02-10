@@ -14,6 +14,11 @@ export class SkillService {
         return 'test';
     }
 
+    public async searchSkillLimit(limit: number): Promise<string> {
+        const result = await session.run(query.getLimitSkill(limit));
+        return result;
+    }
+
     public async createSkill(variable: string, type: string, value: string): Promise<boolean> {
         return await session.run(query.createAdminData(variable, type, value));
     }
